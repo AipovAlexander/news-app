@@ -1,4 +1,4 @@
-# Pyrex shop Strada pet | FR-6
+# News app Strada pet | FR-6
 
 ## Project Purpose
 
