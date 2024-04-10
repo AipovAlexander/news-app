@@ -8,6 +8,7 @@
     "composite": true,
     "allowSyntheticDefaultImports": true,
 
+
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
@@ -25,4 +26,3 @@
   "include": ["src"],
   "exclude": [
     "node_modules"],
-}
