@@ -1,5 +1,5 @@
-function MainPage() {
+function Main() {
   return <>Добро пожаловать на главную страницу</>;
 }
 
-export default MainPage;
+export default Main;

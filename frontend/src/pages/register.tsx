@@ -1,5 +1,5 @@
-function RegisterPage() {
-  return <>RegisterPage</>;
+function Register() {
+  return <>Register</>;
 }
 
-export default RegisterPage;
+export default Register;
