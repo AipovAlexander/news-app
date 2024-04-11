@@ -1,5 +1,5 @@
 function Register() {
-  return <>Register</>;
+  return <>Здесь будет регистрация</>;
 }
 
 export default Register;

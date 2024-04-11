@@ -1,5 +1,5 @@
 function AccountSettings() {
-  return <>AccountSettings</>;
+  return <>Здесь будут настройки аккаунта</>;
 }
 
 export default AccountSettings;

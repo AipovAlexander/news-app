@@ -6,32 +6,63 @@ import AccountSettings from "./pages/account-settings";
 import Register from "./pages/register";
 import Login from "./pages/login";
 import Error from "./pages/error";
+import Header from "./components/header";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main />,
+    element: (
+      <>
+        <Header />
+        <Main />
+      </>
+    ),
     errorElement: <Error />,
   },
   {
     path: "/about",
-    element: <About />,
+    element: (
+      <>
+        <Header />
+        <About />
+      </>
+    ),
   },
   {
     path: "/profile",
-    element: <Profile />,
+    element: (
+      <>
+        <Header />
+        <Profile />
+      </>
+    ),
   },
   {
     path: "/account-settings",
-    element: <AccountSettings />,
+    element: (
+      <>
+        <Header />
+        <AccountSettings />
+      </>
+    ),
   },
   {
     path: "/register",
-    element: <Register />,
+    element: (
+      <>
+        <Header />
+        <Register />
+      </>
+    ),
   },
   {
     path: "/login",
-    element: <Login />,
+    element: (
+      <>
+        <Header />
+        <Login />
+      </>
+    ),
   },
 ]);
 
