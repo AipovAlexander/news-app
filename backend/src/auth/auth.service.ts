@@ -1,26 +1,24 @@
+import { ConfigService } from '@nestjs/config';
 import { Injectable } from '@nestjs/common';
-import { CreateAuthDto } from './dto/create-auth.dto';
-import { UpdateAuthDto } from './dto/update-auth.dto';
+import { JwtService } from '@nestjs/jwt';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class AuthService {
-  create(createAuthDto: CreateAuthDto) {
-    return 'This action adds a new auth';
+  constructor(
+    private jwtService: JwtService,
+    private configService: ConfigService,
+  ) {}
+
+  generateToken(email: string) {
+    const secret = this.configService.get('JWT_SECRET');
+    return this.jwtService.sign({ email }, { secret });
   }
 
-  findAll() {
-    return `This action returns all auth`;
-  }
-
-  findOne(id: number) {
-    return `This action returns a #${id} auth`;
-  }
-
-  update(id: number, updateAuthDto: UpdateAuthDto) {
-    return `This action updates a #${id} auth`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} auth`;
+  async comparePasswords(
+    plainPassword: string,
+    hashedPassword: string,
+  ): Promise<boolean> {
+    return await bcrypt.compare(plainPassword, hashedPassword);
   }
 }
