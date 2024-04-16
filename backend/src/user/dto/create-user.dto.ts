@@ -9,8 +9,8 @@ export class CreateUserDto {
 
   @ApiProperty()
   @IsString()
-  @Matches(/^[a-zA-Z]+$/, { message: 'Surname must contain only letters' })
-  surname: string;
+  @Matches(/^[a-zA-Z]+$/, { message: 'lastname must contain only letters' })
+  lastname: string;
 
   @ApiProperty()
   @IsString()
