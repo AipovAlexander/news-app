@@ -1,6 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { HydratedDocument } from 'mongoose';
 import { User } from '../user/user.schema';
+import { Comment } from '../comment/comment.schema';
 
 export type PostDocument = HydratedDocument<Post>;
 
@@ -18,9 +19,8 @@ export class Post {
   @Prop()
   image: string;
 
-  //TODO коменты отдельная сущность?
-  @Prop({ type: [{ type: String }] })
-  comments: string[];
+  @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }] })
+  comments: Comment[];
 
   @Prop({ default: Date.now })
   createdAt: Date;
