@@ -1,7 +1,19 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty, IsString, IsOptional, IsMongoId } from 'class-validator';
+import {
+  IsNotEmpty,
+  IsString,
+  IsOptional,
+  IsMongoId,
+  MaxLength,
+} from 'class-validator';
 
 export class CreatePostDto {
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  @MaxLength(100)
+  title: string;
+
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
